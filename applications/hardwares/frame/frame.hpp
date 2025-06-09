@@ -32,38 +32,29 @@ constexpr float MAX_Z = 0;     // m
 
 // -------------------- 对外功能 --------------------
 extern float x;  // 只读! 单位: m
-extern float y;  // 只读! 单位: m
 extern float z;  // 只读! 单位: m
 
 void disable_x();
-void disable_y();
 void disable_z();
 
 void init_x();
-void init_y();
 void init_z();
 
 void add_x(float value);
-void add_y(float value);
 void add_z(float value);
 
 void cmd_x(float value);
-void cmd_y(float value);
 void cmd_z(float value);
 
 void cmd_vx(float value);
-void cmd_vy(float value);
 void cmd_vz(float value);
 
 void control_x();
-void control_y();
 void control_z();
 
 // -------------------- 对外硬件 --------------------
 extern sp::RM_Motor motor_xl;
 extern sp::RM_Motor motor_xr;
-extern sp::RM_Motor motor_yf;
-extern sp::RM_Motor motor_yr;
 extern sp::RM_Motor motor_zl;
 extern sp::RM_Motor motor_zr;
 
@@ -74,8 +65,6 @@ extern sp::PID z_pid;  // m -> m/s
 
 extern sp::PID speed_xl_pid;  // rad/s -> N·m
 extern sp::PID speed_xr_pid;  // rad/s -> N·m
-extern sp::PID speed_yf_pid;  // rad/s -> N·m
-extern sp::PID speed_yr_pid;  // rad/s -> N·m
 extern sp::PID speed_zl_pid;  // rad/s -> N·m
 extern sp::PID speed_zr_pid;  // rad/s -> N·m
 

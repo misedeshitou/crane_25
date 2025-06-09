@@ -45,7 +45,6 @@ BehaviorStatus calibrate()
   static bool calibrated_x = false;
   static bool moved_x = false;
   static bool calibrated_z = false;
-  static bool calibrated_end = false;
 
   if (!calibrated_x)
     calibrated_x = (calibrate_x() == BehaviorStatus::SUCCESS);
@@ -60,7 +59,6 @@ BehaviorStatus calibrate()
     calibrated_x = false;
     moved_x = false;
     calibrated_z = false;
-    calibrated_end = false;
     return BehaviorStatus::SUCCESS;
   }
 

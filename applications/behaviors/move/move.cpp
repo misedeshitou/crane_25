@@ -7,6 +7,7 @@
 
 // hardwares
 #include "hardwares/frame/frame.hpp"
+#include "hardwares/servo/servo.hpp"
 
 BehaviorStatus move_x(float x)
 {
@@ -36,15 +37,25 @@ BehaviorStatus move_z(float z)
   return BehaviorStatus::SUCCESS;
 }
 
-BehaviorStatus move(float x, float y, float z, float yaw, float roll1, float pitch, float roll2)
+BehaviorStatus switch_claw(bool claw)
+{
+  if (claw) {
+    servo::claw_close();
+  }
+  else {
+    servo::claw_open();
+  }
+  return BehaviorStatus::SUCCESS;
+}
+
+BehaviorStatus move(float x, float z, bool claw)
 {
   static bool moved_x = false;
   static bool moved_z = false;
-
+  static bool switched_claw = false;
   if (!moved_x) moved_x = (move_x(x) == BehaviorStatus::SUCCESS);
   if (!moved_z) moved_z = (move_z(z) == BehaviorStatus::SUCCESS);
-
-  if (!(moved_x && moved_z)) return BehaviorStatus::RUNNING;
+  if (!switched_claw) switched_claw = (switch_claw(claw) == BehaviorStatus::SUCCESS);
 
   moved_x = false;
   moved_z = false;

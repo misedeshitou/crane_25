@@ -60,6 +60,7 @@ target_sources(${CMAKE_PROJECT_NAME} PRIVATE
     applications/hardwares/servo/servo.cpp
     applications/main_task.cpp
     applications/behaviors/move/move.cpp
+    applications/behaviors/store/store.cpp
 
     sp_middleware/io/led/led.cpp
     sp_middleware/io/buzzer/buzzer.cpp

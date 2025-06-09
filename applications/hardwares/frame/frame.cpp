@@ -13,12 +13,10 @@ float z_set = 0;
 float vx_set = 0;
 float vz_set = 0;
 
-// sp::RM_Motor motor_xl(1, sp::RM_Motors::M2006, sp::M2006_P36);
-// sp::RM_Motor motor_xr(2, sp::RM_Motors::M2006, sp::M2006_P36);
-// sp::RM_Motor motor_yf(3, sp::RM_Motors::M2006, sp::M2006_P36);
-// sp::RM_Motor motor_yr(4, sp::RM_Motors::M2006, sp::M2006_P36);
-// sp::RM_Motor motor_zl(5, sp::RM_Motors::M3508, sp::M3508_P19);
-// sp::RM_Motor motor_zr(6, sp::RM_Motors::M3508, sp::M3508_P19);
+sp::RM_Motor motor_xl(1, sp::RM_Motors::M2006, sp::M2006_P36);
+sp::RM_Motor motor_xr(2, sp::RM_Motors::M2006, sp::M2006_P36);
+sp::RM_Motor motor_zl(5, sp::RM_Motors::M3508, sp::M3508_P19);
+sp::RM_Motor motor_zr(6, sp::RM_Motors::M3508, sp::M3508_P19);
 
 sp::PID x_pid(T, 5, 0, 0, MAX_VX, MAX_VX);
 sp::PID z_pid(T, 5, 0, 0, MAX_VZ, MAX_VZ);
