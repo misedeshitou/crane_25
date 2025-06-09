@@ -48,11 +48,34 @@ target_link_directories(${CMAKE_PROJECT_NAME} PRIVATE
 # Add sources to executable
 target_sources(${CMAKE_PROJECT_NAME} PRIVATE
     # Add user sources here
+    applications/hardwares/buzzer/buzzer.cpp
+    applications/hardwares/led/led.cpp
+    applications/main_task.cpp
+    applications/control_task.cpp
+
+    sp_middleware/io/led/led.cpp
+    sp_middleware/io/buzzer/buzzer.cpp
+    sp_middleware/io/plotter/plotter.cpp
+    sp_middleware/io/ws2812/ws2812.cpp
+    sp_middleware/io/dbus/dbus.cpp
+    sp_middleware/io/servo/servo.cpp
+    
+    sp_middleware/motor/rm_motor/rm_motor.cpp
+    sp_middleware/motor/dm_motor/dm_motor.cpp
+    
+    sp_middleware/tools/math_tools/math_tools.cpp
+    sp_middleware/tools/pid/pid.cpp
+    sp_middleware/tools/mecanum/mecanum.cpp
+    sp_middleware/tools/diff_gear/diff_gear.cpp
+    sp_middleware/tools/motor_composer/motor_composer.cpp
+    sp_middleware/tools/low_pass_filter/low_pass_filter.cpp
 )
 
 # Add include paths
 target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE
     # Add user defined include paths
+    sp_middleware/
+    applications
 )
 
 # Add project symbols (macros)
