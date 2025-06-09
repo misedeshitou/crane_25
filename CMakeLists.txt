@@ -53,6 +53,13 @@ target_sources(${CMAKE_PROJECT_NAME} PRIVATE
     applications/main_task.cpp
     applications/control_task.cpp
     applications/hardwares/frame/frame.cpp
+    applications/behaviors/calibrate/calibrate.cpp
+    applications/hardwares/can/can.cpp
+    applications/hardwares/can/can_recv.cpp
+    applications/behaviors/disable/disable.cpp
+    applications/hardwares/servo/servo.cpp
+    applications/main_task.cpp
+    applications/behaviors/move/move.cpp
 
     sp_middleware/io/led/led.cpp
     sp_middleware/io/buzzer/buzzer.cpp
@@ -60,6 +67,7 @@ target_sources(${CMAKE_PROJECT_NAME} PRIVATE
     sp_middleware/io/ws2812/ws2812.cpp
     sp_middleware/io/dbus/dbus.cpp
     sp_middleware/io/servo/servo.cpp
+    sp_middleware/io/can/can.cpp
     
     sp_middleware/motor/rm_motor/rm_motor.cpp
     sp_middleware/motor/dm_motor/dm_motor.cpp

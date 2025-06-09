@@ -1,6 +1,7 @@
 #include "servo.hpp"
 
 #include "cmsis_os.h"
+#include "hardwares/hardware_mode.hpp"
 #include "io/servo/servo.hpp"
 
 namespace servo
@@ -12,14 +13,14 @@ void claw_open()
 {
   servo_mode = HardwareMode::POSITION;
   servo.set(0.0f);  // Open claw
-  osDelay(1000);    // Wait for 1 second
 }
+
 void claw_close()
 {
   servo_mode = HardwareMode::POSITION;
   servo.set(90.0f);  // Close claw
-  osDelay(1000);     // Wait for 1 second
 }
+
 void servo_disable() { servo_mode = HardwareMode::DISABLE; }
 
 }  // namespace servo
