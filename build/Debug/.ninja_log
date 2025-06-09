@@ -33,7 +33,7 @@
 1645	2609	7711406537443734	CMakeFiles/25_crane_claw.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj	662cb5762df86e90
 1399	2546	7711406536084151	CMakeFiles/25_crane_claw.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj	5f5011b41bc60060
 178	1239	7711406523583400	CMakeFiles/25_crane_claw.dir/Src/dac.c.obj	9dbbe42e8fd0ac74
-45	1247	7711410381945552	CMakeFiles/25_crane_claw.dir/Src/freertos.c.obj	f6e532240b420b54
+61	1835	7711413870706184	CMakeFiles/25_crane_claw.dir/Src/freertos.c.obj	f6e532240b420b54
 1454	2252	7711406533835262	CMakeFiles/25_crane_claw.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj	32db44bed3a79ad1
 3072	3753	7711406549186317	CMakeFiles/25_crane_claw.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.c.obj	c13399a42b509798
 148	1404	7711406524910659	CMakeFiles/25_crane_claw.dir/Src/main.c.obj	d63fa38e1e4d56fe
@@ -41,7 +41,7 @@
 95	1644	7711406527972160	CMakeFiles/25_crane_claw.dir/sp_middleware/io/dbus/dbus.cpp.obj	c40d63629c26bd7b
 1168	1835	7711406529898285	CMakeFiles/25_crane_claw.dir/Src/tim.c.obj	2934b75969dcb896
 422	1348	7711406524460830	CMakeFiles/25_crane_claw.dir/Src/rng.c.obj	595ea5aaa057d45f
-4	666	7711413838514354	build.ninja	b9f740d22e3a1ad7
+4	666	7711419286458343	build.ninja	b9f740d22e3a1ad7
 1178	2182	7711406533326142	CMakeFiles/25_crane_claw.dir/Src/usart.c.obj	86a783a9ef062a80
 567	1454	7711406526096913	CMakeFiles/25_crane_claw.dir/Src/spi.c.obj	b4e6859f86c3f39f
 1279	2091	7711406531897555	CMakeFiles/25_crane_claw.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd_ex.c.obj	b0512373a2ab73e0
@@ -69,6 +69,7 @@
 2527	3221	7711406543020165	CMakeFiles/25_crane_claw.dir/Middlewares/Third_Party/FreeRTOS/Source/event_groups.c.obj	bb3efbe061f2e112
 2290	3288	7711406543621861	CMakeFiles/25_crane_claw.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dac_ex.c.obj	f44de42c512b8419
 2494	3293	7711406544091417	CMakeFiles/25_crane_claw.dir/Src/system_stm32f4xx.c.obj	da008f4ec74e249f
+1836	2598	7711413877823695	25_crane_claw.elf	eb79f1be50b4dc70
 2091	3297	7711406543786211	CMakeFiles/25_crane_claw.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc_ex.c.obj	39b4424314412169
 2609	3305	7711406544379531	CMakeFiles/25_crane_claw.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c.obj	17924580abecd76
 2536	3334	7711406544127984	CMakeFiles/25_crane_claw.dir/Middlewares/Third_Party/FreeRTOS/Source/list.c.obj	c49006ae5d8967ac
@@ -89,5 +90,5 @@
 12	204	7711411516097291	CMakeFiles/25_crane_claw.dir/applications/main_task.cpp.obj	9723e988409eb8b0
 61	261	7711412322102927	CMakeFiles/25_crane_claw.dir/applications/control_task.cpp.obj	bed3f4f8b13019e3
 74	528	7711412821813569	CMakeFiles/25_crane_claw.dir/sp_middleware/io/led/led.cpp.obj	67406502c11b3be9
-61	1835	7711413870706184	CMakeFiles/25_crane_claw.dir/Src/freertos.c.obj	f6e532240b420b54
-1836	2598	7711413877823695	25_crane_claw.elf	eb79f1be50b4dc70
+10	550	7711420396871744	CMakeFiles/25_crane_claw.dir/applications/hardwares/frame/frame.cpp.obj	1de76a5aa0f6e912
+551	1261	7711420403531367	25_crane_claw.elf	9b7c7834d1b152ad

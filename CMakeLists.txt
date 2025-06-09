@@ -52,6 +52,7 @@ target_sources(${CMAKE_PROJECT_NAME} PRIVATE
     applications/hardwares/led/led.cpp
     applications/main_task.cpp
     applications/control_task.cpp
+    applications/hardwares/frame/frame.cpp
 
     sp_middleware/io/led/led.cpp
     sp_middleware/io/buzzer/buzzer.cpp
