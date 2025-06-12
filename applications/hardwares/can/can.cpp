@@ -44,8 +44,8 @@ void send_frame_x()
 
 void autoaim_read(autoaim_measure * autoaim_state, uint8_t rx_data[8])
 {
-  autoaim_state->vision_state = rx_data[0];
-  autoaim_state->layer = (rx_data[1] == 1);
+  autoaim_state->action = rx_data[0];
+  autoaim_state->layer = rx_data[1];
 }
 
 }  // namespace can

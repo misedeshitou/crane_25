@@ -5,6 +5,7 @@
 #include "behaviors/behavior_tick.hpp"
 #include "behaviors/calibrate/calibrate.hpp"
 #include "behaviors/disable/disable.hpp"
+#include "behaviors/grab/grab.hpp"
 #include "behaviors/store/store.hpp"
 #include "hardwares/can/can.hpp"
 
@@ -18,8 +19,12 @@ extern "C" void main_task()
     if (!calibrated)
       calibrated = (calibrate() == BehaviorStatus::SUCCESS);
     else {
-      if (chassis_done)
-        chassis_done = !(store(can::autoaim_data.layer) == BehaviorStatus::SUCCESS);
+      if (chassis_done) {
+        if (can::autoaim_data.action)
+          chassis_done = !(store(can::autoaim_data.layer) == BehaviorStatus::SUCCESS);
+        else
+          chassis_done = !(grab(can::autoaim_data.layer) == BehaviorStatus::SUCCESS);
+      }
       else {
         disable();
       }

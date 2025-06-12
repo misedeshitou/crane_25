@@ -10,8 +10,8 @@ extern sp::CAN can2;
 //自瞄数据
 typedef struct
 {
-  char vision_state;
-  bool layer;  // 是否为上层
+  bool action;  // 0为抓取，1为放置
+  bool layer;   // 0为低层，1为高层
 } autoaim_measure;
 
 extern autoaim_measure autoaim_data;
