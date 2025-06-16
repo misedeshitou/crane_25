@@ -14,7 +14,10 @@ static BehaviorStatus calibrate_x()
 
   frame::cmd_vx(-0.1);
 
-  if (std::abs(frame::motor_xl.torque) > 0.5 || std::abs(frame::motor_xr.torque) > 0.5) reach_cnt++;
+  if (
+    std::abs(frame::motor_x1.torque) > 0.5 || std::abs(frame::motor_x2.torque) > 0.5 ||
+    std::abs(frame::motor_x3.torque) > 0.5 || std::abs(frame::motor_x4.torque) > 0.5)
+    reach_cnt++;
   if (reach_cnt < 0.5 / T) return BehaviorStatus::RUNNING;
 
   frame::init_x();

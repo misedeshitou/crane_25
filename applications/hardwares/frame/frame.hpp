@@ -17,11 +17,10 @@ constexpr float MAX_VX = 0.5;  // m/s
 constexpr float MAX_VY = 0.5;  // m/s
 constexpr float MAX_VZ = 0.5;  // m/s
 
-// -------------------- 机械参数 --------------------
-constexpr float X_RADIUS = 2e-2;   // m
-constexpr float Y_RADIUS = 1e-2;   // m
-constexpr float Z_RADIUS = 45e-3;  // m
+constexpr float Zdistance_to_Zangle = 2 * sp::PI / 0.01;  // rad/m
+constexpr float Xdistance_to_Xangle = 2 * sp::PI / 0.1;   // rad/m
 
+// -------------------- 机械参数 --------------------
 constexpr float MIN_X = 0;      // m
 constexpr float MIN_Y = 0;      // m
 constexpr float MIN_Z = -0.75;  // m
@@ -53,8 +52,10 @@ void control_x();
 void control_z();
 
 // -------------------- 对外硬件 --------------------
-extern sp::RM_Motor motor_xl;
-extern sp::RM_Motor motor_xr;
+extern sp::RM_Motor motor_x1;
+extern sp::RM_Motor motor_x2;
+extern sp::RM_Motor motor_x3;
+extern sp::RM_Motor motor_x4;
 extern sp::RM_Motor motor_zl;
 extern sp::RM_Motor motor_zr;
 

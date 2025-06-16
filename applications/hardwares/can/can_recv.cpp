@@ -2,6 +2,7 @@
 
 #include "can.hpp"
 #include "cmsis_os.h"
+#include "hardwares/frame/frame.hpp"
 constexpr uint32_t CAN_AUTOAIM_ID = 0x0FF;
 
 extern "C" void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef * hcan)
@@ -10,18 +11,20 @@ extern "C" void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef * hcan)
   while (HAL_CAN_GetRxFifoFillLevel(hcan, CAN_RX_FIFO0) > 0) {
     if (hcan == &hcan1) {
       can::can1.recv();
-      //   if (can1.rx_id == fric_motor1.rx_id) {
-      //     fric_motor1.read(can1.rx_data, stamp_ms);
-      //   }
-      //   else if (can1.rx_id == fric_motor2.rx_id) {
-      //     fric_motor2.read(can1.rx_data, stamp_ms);
-      //   }
-      //   else if (can1.rx_id == trigger_motor.rx_id)
-      //     trigger_motor.read(can1.rx_data, stamp_ms);
-      //   else if (can1.rx_id == pitch_motor.rx_id)
-      //     pitch_motor.read(can1.rx_data, stamp_ms);
-      //   //自瞄ID
-      if (can::can1.rx_id == CAN_AUTOAIM_ID) {
+      if (can::can1.rx_id == frame::motor_x1.rx_id)
+        frame::motor_x1.read(can::can1.rx_data, stamp_ms);
+      else if (can::can1.rx_id == frame::motor_x2.rx_id)
+        frame::motor_x2.read(can::can1.rx_data, stamp_ms);
+      else if (can::can1.rx_id == frame::motor_x3.rx_id)
+        frame::motor_x3.read(can::can1.rx_data, stamp_ms);
+      else if (can::can1.rx_id == frame::motor_x4.rx_id)
+        frame::motor_x4.read(can::can1.rx_data, stamp_ms);
+      else if (can::can1.rx_id == frame::motor_zl.rx_id)
+        frame::motor_zl.read(can::can1.rx_data, stamp_ms);
+      else if (can::can1.rx_id == frame::motor_zr.rx_id)
+        frame::motor_zr.read(can::can1.rx_data, stamp_ms);
+      //运算平台ID
+      else if (can::can1.rx_id == CAN_AUTOAIM_ID) {
         can::autoaim_read(&can::autoaim_data, can::can1.rx_data);
       }
     }
