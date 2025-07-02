@@ -5,8 +5,8 @@
 // behaviors
 #include "behaviors/behavior_tick.hpp"
 #include "hardwares/can/can.hpp"
+#include "hardwares/chassis/chassis.hpp"
 #include "hardwares/frame/frame.hpp"
-
 extern "C" void control_task()
 {
   can::start();
@@ -16,6 +16,12 @@ extern "C" void control_task()
 
     frame::control_x();
     can::send_frame_x();
+
+    chassis::control_pivot();
+    can::send_pivot();
+
+    chassis::control_drive();
+    can::send_drive();
 
     osDelay(BEHAVIOR_TICK_MS);
   }

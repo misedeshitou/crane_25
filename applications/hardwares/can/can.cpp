@@ -3,6 +3,7 @@
 #include "cmsis_os.h"
 
 // hardwares
+#include "hardwares/chassis/chassis.hpp"
 #include "hardwares/frame/frame.hpp"
 
 namespace can
@@ -19,13 +20,20 @@ void start()
   can2.start();
 }
 
-void send_chassis()
+void send_pivot()
 {
-  //   chassis::motor_lf.write(can2.tx_data);
-  //   chassis::motor_lr.write(can2.tx_data);
-  //   chassis::motor_rr.write(can2.tx_data);
-  //   chassis::motor_rf.write(can2.tx_data);
-  //   can2.send(chassis::motor_lf.tx_id);
+  chassis::pivot_2.write(can2.tx_data);
+  chassis::pivot_4.write(can2.tx_data);
+  can2.send(chassis::pivot_2.tx_id);
+}
+
+void send_drive()
+{
+  chassis::omni_1.write(can2.tx_data);
+  chassis::drive_2.write(can2.tx_data);
+  chassis::omni_3.write(can2.tx_data);
+  chassis::drive_4.write(can2.tx_data);
+  can2.send(chassis::omni_1.tx_id);
 }
 
 void send_frame_z()
