@@ -62,6 +62,14 @@ target_sources(${CMAKE_PROJECT_NAME} PRIVATE
     applications/behaviors/move/move.cpp
     applications/behaviors/store/store.cpp
     applications/behaviors/grab/grab.cpp
+    
+    applications/behaviors/transport/transport.cpp
+    applications/hardwares/chassis/chassis.cpp
+    applications/hardwares/chassis/swerve_omni.cpp
+    applications/hardwares/chassis/kalman_filter.cpp
+    applications/hardwares/chassis/trajectory_prediction.cpp
+    applications/hardwares/imu/imu_task.cpp
+    applications/hardwares/chassis/MPC.cpp
 
     sp_middleware/io/led/led.cpp
     sp_middleware/io/buzzer/buzzer.cpp
@@ -70,6 +78,9 @@ target_sources(${CMAKE_PROJECT_NAME} PRIVATE
     sp_middleware/io/dbus/dbus.cpp
     sp_middleware/io/servo/servo.cpp
     sp_middleware/io/can/can.cpp
+
+    sp_middleware/io/bmi088/bmi088.cpp
+    sp_middleware/tools/mahony/mahony.cpp
     
     sp_middleware/motor/rm_motor/rm_motor.cpp
     sp_middleware/motor/dm_motor/dm_motor.cpp

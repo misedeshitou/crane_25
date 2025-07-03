@@ -52,6 +52,8 @@ osThreadId Led_TaskHandle;
 osThreadId Buzzer_TaskHandle;
 osThreadId Control_TaskHandle;
 osThreadId Main_TaskHandle;
+osThreadId Trajectory_PredictionHandle;
+osThreadId IMUHandle;
 
 /* Private function prototypes -----------------------------------------------*/
 /* USER CODE BEGIN FunctionPrototypes */
@@ -63,6 +65,8 @@ extern void led_task(void const * argument);
 extern void buzzer_task(void const * argument);
 extern void control_task(void const * argument);
 extern void main_task(void const * argument);
+extern void trajectory_prediction_task(void const * argument);
+extern void imu_task(void const * argument);
 
 extern void MX_USB_DEVICE_Init(void);
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
@@ -127,8 +131,16 @@ void MX_FREERTOS_Init(void) {
   Control_TaskHandle = osThreadCreate(osThread(Control_Task), NULL);
 
   /* definition and creation of Main_Task */
-  osThreadDef(Main_Task, main_task, osPriorityAboveNormal, 0, 2048);
+  osThreadDef(Main_Task, main_task, osPriorityAboveNormal, 0, 1024);
   Main_TaskHandle = osThreadCreate(osThread(Main_Task), NULL);
+
+  /* definition and creation of Trajectory_Prediction */
+  osThreadDef(Trajectory_Prediction, trajectory_prediction_task, osPriorityHigh, 0, 1024);
+  Trajectory_PredictionHandle = osThreadCreate(osThread(Trajectory_Prediction), NULL);
+
+  /* definition and creation of IMU */
+  osThreadDef(IMU, imu_task, osPriorityNormal, 0, 1024);
+  IMUHandle = osThreadCreate(osThread(IMU), NULL);
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
